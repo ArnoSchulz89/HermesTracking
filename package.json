@@ -1,0 +1,17 @@
+{
+  "name": "Hermes-Tracking-Google-Home",
+  "version": "1.0.0",
+  "description": "Hermes-Tracking-Google-Home",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Arno Schulz",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "request": "^2.81.0",
+    "trim": "0.0.1"
+  },
+  "license": "ISC"
+}

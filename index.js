@@ -24,6 +24,9 @@ restService.post('/hermestracking', function(req, res) {
                 var speech = req.body.result && req.body.result.parameters && req.body.result.parameters.barcode ? hermesRes : "I didn't get it rigth, please Speak again."
                 return res.json({speech: speech, displayText: speech, source: 'gHomeHermesTrackingAPI'});
             }
+        }else{
+            speech = "I could not find any information to this barcode";
+            return res.json({speech: speech, displayText: speech, source: 'gHomeHermesTrackingAPI'});
         }
     });
 });

@@ -1,2 +1,2 @@
 # HermesTracking
-Service to connect barcode requests from Google Home to Hermes tracking API
+Service to send barcode requests from Google Home to Hermes tracking API

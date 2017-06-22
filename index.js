@@ -11,7 +11,7 @@ restService.use(bodyParser.json());
 
 
 restService.post('/hermestracking', function(req, res) {
-    var googleReq = '00000000000000' + req.body.result.parameters.barcode.replace(/[^0-9.]/g, "");
+    var googleReq = req.body.result.parameters.barcode.replace(/[^0-9.]/g, "");
     //console.log(googleReq);
 
     // getTracking(barcode-String, get-Method-to-hermes-tracking-API);

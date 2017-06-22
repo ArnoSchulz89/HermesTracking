@@ -12,12 +12,11 @@ restService.use(bodyParser.json());
 
 restService.post('/hermestracking', function(req, res) {
     var googleReq = req.body.result.parameters.barcode.replace(/[^0-9.]/g, "");
-    console.log(googleReq);
+    //console.log(googleReq);
 
     var hermesRes = tracking.getTracking(googleReq, function (error, response, body) {
         if (!error && response.statusCode == 200) {
             var latest = JSON.parse(body)[0];
-            console.log(latest.point.description + ' is the state of your parcel');
             var hermesRes = answers.buildAnswerSentence(latest);
 
             if(hermesRes != ''){
@@ -25,6 +24,7 @@ restService.post('/hermestracking', function(req, res) {
                 return res.json({speech: speech, displayText: speech, source: 'gHomeHermesTrackingAPI'});
             }
         }else{
+            console.log(error);
             speech = "I could not find any information to this barcode";
             return res.json({speech: speech, displayText: speech, source: 'gHomeHermesTrackingAPI'});
         }
